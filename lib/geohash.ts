@@ -11,9 +11,9 @@ export function decodeGeohash(hash: string): { latitude: number; longitude: numb
   return ngeohash.decode(hash);
 }
 
-// Approximate labels for Hamilton neighborhoods
+// Approximate labels for Waterloo neighborhoods
 const LOCATION_LABELS: Record<string, string> = {
-  dpz8: 'near Downtown Hamilton',
+  dpz8: 'near Downtown Waterloo',
   dpz9: 'near James St North',
   dpzb: 'near Barton Village',
   dpzc: 'near Stinson',

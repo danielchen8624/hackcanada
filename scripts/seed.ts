@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
-// Seed script for SafePulse Firebase
+// Seed script for NorthReport Firebase
 // Run: npx tsx scripts/seed.ts
 
 import { loadEnvConfig } from '@next/env';
@@ -35,7 +35,7 @@ async function seed() {
   const neighborhoods = [
     {
       slug: 'downtown-hamilton',
-      name: 'Downtown Hamilton',
+      name: 'Downtown Waterloo',
       bounds: { sw: [-79.88, 43.25], ne: [-79.86, 43.26] },
       healthScore: { overall: 72, infrastructure: 65, safety: 78 },
       reportCount7d: 23,

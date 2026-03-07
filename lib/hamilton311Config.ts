@@ -1,5 +1,5 @@
 /**
- * Hamilton 311 Service Request Configuration
+ * Waterloo 311 Service Request Configuration
  * Pre-configured categories, form fields, and submission instructions
  */
 
@@ -31,7 +31,7 @@ export interface GeneratedForm {
     contactInfo?: string;
 }
 
-// Hamilton 311 official website
+// Waterloo 311 official website
 export const HAMILTON_311_URL = 'https://www.hamilton.ca/home-neighbourhood/get-help-city-services/report-problem-311';
 
 // Common form fields for all categories
@@ -40,7 +40,7 @@ const COMMON_FIELDS: FormField[] = [
     { name: 'description', label: 'Description', type: 'textarea', required: true, placeholder: 'Describe the issue in detail' },
 ];
 
-// Hamilton 311 Categories
+// Waterloo 311 Categories
 export const CATEGORIES: Category311[] = [
     {
         id: 'road-hazard',

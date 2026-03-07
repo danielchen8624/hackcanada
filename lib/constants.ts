@@ -20,7 +20,7 @@ export const CATEGORY_LABELS: Record<string, string> = {
 };
 
 export const NEIGHBORHOODS = [
-  { slug: 'downtown-hamilton', name: 'Downtown Hamilton' },
+  { slug: 'downtown-hamilton', name: 'Downtown Waterloo' },
   { slug: 'james-st-north', name: 'James St North' },
   { slug: 'barton-village', name: 'Barton Village' },
   { slug: 'westdale', name: 'Westdale' },

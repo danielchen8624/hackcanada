@@ -49,7 +49,7 @@ const getRelativeDate = (hoursAgo: number) => {
     return date.toISOString();
 };
 
-// Initial mock issues centered around Hamilton, Ontario
+// Initial mock issues centered around Waterloo, Ontario
 export const INITIAL_MOCK_ISSUES: MockIssue[] = [
     {
         id: 'issue-1',

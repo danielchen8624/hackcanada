@@ -173,7 +173,7 @@ function VoiceHUD({
           <p className="text-xs text-white/30">
             Say{' '}
             <span className="text-cyan-400/60 font-medium">
-              &ldquo;Hey SafePulse&rdquo;
+              &ldquo;Hey NorthReport&rdquo;
             </span>{' '}
             to speak with the agent
           </p>
@@ -262,7 +262,7 @@ export default function SmartReportAgent() {
 
   const [step, setStep] = useState<Step>('intake');
   const [image, setImage] = useState<string | null>(null);
-  const [address, setAddress] = useState('100 Main St W, Hamilton, ON');
+  const [address, setAddress] = useState('100 Main St W, Waterloo, ON');
   const [notes, setNotes] = useState('');
   const [analysis, setAnalysis] = useState<AgentAnalysis | null>(null);
   const [error, setError] = useState('');
@@ -346,8 +346,8 @@ export default function SmartReportAgent() {
   /* ── Listen for global voice "analyze" event ── */
   useEffect(() => {
     const handler = () => { handleAnalyzeRef.current(); };
-    window.addEventListener('safepulse:analyze', handler);
-    return () => { window.removeEventListener('safepulse:analyze', handler); };
+    window.addEventListener('northreport:analyze', handler);
+    return () => { window.removeEventListener('northreport:analyze', handler); };
   }, []);
 
   /* ── Submit to AI ── */
@@ -461,7 +461,7 @@ export default function SmartReportAgent() {
               </div>
               <div>
                 <p className="text-xs font-semibold text-cyan-400 tracking-wider uppercase">
-                  Hamilton AI Agent
+                  Waterloo AI Agent
                 </p>
                 <p className="text-[11px] text-white/40">Smart City Intake System</p>
               </div>
@@ -607,7 +607,7 @@ export default function SmartReportAgent() {
                     AI Agent Analyzing...
                   </p>
                   <p className="text-xs text-white/40">
-                    Cross-referencing Hamilton bylaws & Ontario regulations
+                    Cross-referencing Waterloo bylaws & Ontario regulations
                   </p>
                 </div>
               </div>

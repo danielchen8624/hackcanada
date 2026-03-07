@@ -11,7 +11,7 @@ interface EducateTextResponse {
   related_topics: string[];
 }
 
-const EDUCATE_TEXT_PROMPT = `You are SafePulse's Community Education Engine. A resident wants to learn more about a civic issue in their neighborhood. Provide educational context in a friendly, accessible tone.
+const EDUCATE_TEXT_PROMPT = `You are NorthReport's Community Education Engine. A resident wants to learn more about a civic issue in their neighborhood. Provide educational context in a friendly, accessible tone.
 
 Given the topic and description, provide:
 1. A clear 2-3 sentence explanation of what this issue is

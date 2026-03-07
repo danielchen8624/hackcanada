@@ -94,14 +94,14 @@ function FeedScreen({ scrollProgress }: { scrollProgress: MotionValue<number> })
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
                     </svg>
-                    <span>Hamilton</span>
+                    <span>Waterloo</span>
                 </div>
             </div>
 
             {/* Header */}
             <div className="px-4 py-2 border-b border-white/5">
                 <div className="flex items-center justify-between">
-                    <h1 className="text-lg font-semibold text-white">Pulse Feed</h1>
+                    <h1 className="text-lg font-semibold text-white">Community Feed</h1>
                     <div
                         className="px-3 py-1.5 rounded-full text-xs font-medium"
                         style={{
@@ -154,7 +154,7 @@ function FeedScreen({ scrollProgress }: { scrollProgress: MotionValue<number> })
                 />
             </motion.div>
 
-            {/* Ask SafePulse button */}
+            {/* Ask NorthReport button */}
             <div className="px-4 py-3 border-t border-white/5">
                 <motion.button
                     className="w-full py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2"
@@ -168,7 +168,7 @@ function FeedScreen({ scrollProgress }: { scrollProgress: MotionValue<number> })
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                         <circle cx="12" cy="12" r="10" />
                     </svg>
-                    Ask SafePulse
+                    Ask NorthReport
                 </motion.button>
             </div>
         </div>
@@ -317,7 +317,7 @@ function VoiceScreen() {
                 transition={{ delay: 0.5 }}
             >
                 <p className="text-lg text-white font-medium mb-2">
-                    &ldquo;Hey SafePulse, there&apos;s a flood on King St.&rdquo;
+                    &ldquo;Hey NorthReport, there&apos;s a flood on King St.&rdquo;
                 </p>
             </motion.div>
 

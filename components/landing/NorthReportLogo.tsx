@@ -1,11 +1,11 @@
 "use client";
 
-interface SafePulseLogoProps {
+interface NorthReportLogoProps {
     size?: "sm" | "md" | "lg";
     showText?: boolean;
 }
 
-export default function SafePulseLogo({ size = "md", showText = true }: SafePulseLogoProps) {
+export default function NorthReportLogo({ size = "md", showText = true }: NorthReportLogoProps) {
     const sizes = {
         sm: { icon: 28, text: "text-lg" },
         md: { icon: 36, text: "text-xl" },

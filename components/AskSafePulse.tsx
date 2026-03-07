@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import AudioPlayer from './AudioPlayer';
 import type { FeedItem } from './FeedCard';
 
-interface AskSafePulseProps {
+interface AskNorthReportProps {
   item: FeedItem | null;
   isOpen: boolean;
   onClose: () => void;
@@ -19,7 +19,7 @@ interface ExplainResult {
   suggestedNextActions: string[];
 }
 
-export default function AskSafePulse({ item, isOpen, onClose }: AskSafePulseProps) {
+export default function AskNorthReport({ item, isOpen, onClose }: AskNorthReportProps) {
   const [result, setResult] = useState<ExplainResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [question, setQuestion] = useState('');
@@ -81,7 +81,7 @@ export default function AskSafePulse({ item, isOpen, onClose }: AskSafePulseProp
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between">
-              <h3 className="text-lg font-semibold text-[#6366f1]">Ask SafePulse</h3>
+              <h3 className="text-lg font-semibold text-[#6366f1]">Ask NorthReport</h3>
               <button onClick={handleClose} className="text-[#888] hover:text-white text-xl">
                 ✕
               </button>

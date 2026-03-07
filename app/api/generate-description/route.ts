@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
       return Response.json({ error: 'technical_description is required' }, { status: 400 });
     }
 
-    const prompt = `You are a 311 report writing assistant for the City of Hamilton, Ontario.
+    const prompt = `You are a 311 report writing assistant for the City of Waterloo, Ontario.
 Given the following analysis of a civic hazard, write a clear, professional 2-3 sentence description suitable for a 311 service request.
 Be specific, factual, and include the location context if available. Do not be overly technical — write for a city dispatcher.
 

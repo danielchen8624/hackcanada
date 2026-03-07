@@ -4,14 +4,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-SafePulse is a feed-first, AI-powered neighborhood safety platform that transforms community reports into actionable intelligence.
+NorthReport is a feed-first, AI-powered neighborhood safety platform that transforms community reports into actionable intelligence.
 The main UI is the Pulse Feed: a real-time stream of what residents are seeing (Stories, Posts, and Structured Reports) — ranked by momentum (upvotes + recency) and risk (severity + corroboration). Residents can record or snap hazards, or simply post what they see. Gemini summarizes and explains items, detects trends/patterns, and helps turn high-signal feed items into formal city-facing reports. Community leaders can take action directly from feed items: view hotspots, generate digests, and assisted-file 311 reports.
 Voices from the Ground + Live City Map (Snap Map-style)
-SafePulse includes a community layer called Voices from the Ground where residents upload short-form content about what they’re seeing (video / audio / text). When posting, users choose:
+NorthReport includes a community layer called Voices from the Ground where residents upload short-form content about what they’re seeing (video / audio / text). When posting, users choose:
 Story → expires in 24 hours (like Instagram/Snap)
 Post → persistent, Reddit-style thread (comments + reposts)
 The community can upvote/like, comment, and repost — and more upvotes pushes content higher so the most important updates rise.
-On top of the feed, SafePulse includes a Live City Map view (Snapchat-style heatmap) showing hotspots of recent Voices activity. Users can tap hotspots to view the stack of stories/posts from that area. Any Voice can optionally be converted into a structured hazard report to feed trends/patterns and assisted 311 filing.
+On top of the feed, NorthReport includes a Live City Map view (Snapchat-style heatmap) showing hotspots of recent Voices activity. Users can tap hotspots to view the stack of stories/posts from that area. Any Voice can optionally be converted into a structured hazard report to feed trends/patterns and assisted 311 filing.
 2
 
 ## Commands
@@ -62,7 +62,7 @@ No test framework is configured.
 - Risk = severity weight + corroboration boost
 
 ### Voice System
-- Wake phrase "Hey SafePulse" via Web Speech API (`components/VoiceListener.tsx`)
+- Wake phrase "Hey NorthReport" via Web Speech API (`components/VoiceListener.tsx`)
 - Command routing through `/api/command` → Gemini classifies intent
 - TTS response via ElevenLabs (`lib/elevenlabs.ts`) with browser fallback (`lib/tts.ts`)
 

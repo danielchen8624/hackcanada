@@ -109,14 +109,14 @@ export function VisionScreen() {
     );
 }
 
-// Screen 2: Pulse Feed with trend alert
+// Screen 2: Community Feed with trend alert
 export function PulseFeedScreen() {
     return (
         <div className="h-full flex flex-col bg-[#0a0a0f]">
             {/* Header */}
             <div className="px-5 py-4 border-b border-white/5">
                 <div className="flex items-center justify-between">
-                    <h1 className="text-lg font-semibold text-white">Pulse Feed</h1>
+                    <h1 className="text-lg font-semibold text-white">Community Feed</h1>
                     <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
                         <span className="text-xs text-green-400">Live</span>
@@ -203,7 +203,7 @@ export function AgentTrackerScreen() {
                 />
                 <ProgressStep
                     icon="filing"
-                    label="Auto-Filing to Hamilton.ca..."
+                    label="Auto-Filing to Waterloo.ca..."
                     status="complete"
                     delay={1.5}
                 />
@@ -235,7 +235,7 @@ export function AgentTrackerScreen() {
                     <span className="text-green-400 font-semibold text-sm">Ticket Confirmed</span>
                 </div>
                 <p className="text-white text-sm">#CITY-4921</p>
-                <p className="text-gray-500 text-xs mt-1">Hamilton 311 • Infrastructure</p>
+                <p className="text-gray-500 text-xs mt-1">Waterloo 311 • Infrastructure</p>
             </motion.div>
         </div>
     );

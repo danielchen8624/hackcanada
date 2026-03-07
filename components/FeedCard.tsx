@@ -236,7 +236,7 @@ export default function FeedCard({ item, onExplain, onSelect, isLeader, onConver
             className="ml-auto btn-ghost text-xs"
             style={{ color: 'var(--accent-primary)' }}
           >
-            Ask SafePulse
+            Ask NorthReport
           </button>
         )}
       </div>

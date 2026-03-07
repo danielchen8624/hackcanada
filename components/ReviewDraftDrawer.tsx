@@ -70,7 +70,7 @@ export default function ReviewDraftDrawer({ draft, onClose, onFileComplete }: Re
         setPhase('preview_311');
     };
 
-    // Opens real Hamilton URL and immediately goes to confirm phase (no loading screen)
+    // Opens real Waterloo URL and immediately goes to confirm phase (no loading screen)
     const handleSubmitToCity = () => {
         window.open(
             'https://www.hamilton.ca/home-neighbourhood/getting-around/streets-sidewalks/road-sidewalk-maintenance',
@@ -374,7 +374,7 @@ export default function ReviewDraftDrawer({ draft, onClose, onFileComplete }: Re
                                         onClick={handleSubmitToCity}
                                         className="flex-[2] py-3 rounded-xl font-medium bg-gradient-to-r from-green-600 to-emerald-500 hover:from-green-500 hover:to-emerald-400 text-white transition-all flex items-center justify-center gap-2"
                                     >
-                                        🏛️ Submit to City of Hamilton
+                                        🏛️ Submit to City of Waterloo
                                         <ExternalLink className="w-3 h-3 opacity-70" />
                                     </button>
                                 </div>
@@ -405,7 +405,7 @@ export default function ReviewDraftDrawer({ draft, onClose, onFileComplete }: Re
                                 Did you complete the 311 submission?
                             </h3>
                             <p className="text-sm text-[var(--text-secondary)] text-center mb-2 max-w-sm">
-                                Confirm only if you successfully submitted the report on the City of Hamilton website.
+                                Confirm only if you successfully submitted the report on the City of Waterloo website.
                             </p>
 
                             {/* Context card */}

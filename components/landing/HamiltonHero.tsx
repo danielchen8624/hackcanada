@@ -5,11 +5,11 @@ import Map, { type MapRef, Source, Layer } from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { motion, useTransform, type MotionValue } from "framer-motion";
 
-interface HamiltonHeroProps {
+interface WaterlooHeroProps {
     scrollProgress: MotionValue<number>;
 }
 
-// Random pulse locations around Hamilton
+// Random pulse locations around Waterloo
 const PULSE_SIGNALS = [
     { lng: -79.866, lat: 43.256, delay: 0 },
     { lng: -79.877, lat: 43.252, delay: 2 },
@@ -19,7 +19,7 @@ const PULSE_SIGNALS = [
     { lng: -79.855, lat: 43.262, delay: 5 },
 ];
 
-export default function HamiltonHero({ scrollProgress }: HamiltonHeroProps) {
+export default function WaterlooHero({ scrollProgress }: WaterlooHeroProps) {
     const mapRef = useRef<MapRef>(null);
     const [bearing, setBearing] = useState(-20);
     const [activePulses, setActivePulses] = useState<number[]>([]);

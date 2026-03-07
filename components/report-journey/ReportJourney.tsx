@@ -41,7 +41,7 @@ interface MilestoneData {
 const HAMILTON_CITY_HALL: Destination = {
     lat: 43.2557,
     lng: -79.8711,
-    name: 'Hamilton City Hall',
+    name: 'Waterloo City Hall',
 };
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || '';

@@ -126,7 +126,7 @@ export default function Form311Document({ draft, editedDescription }: Form311Doc
                             <div><span className="text-gray-500">Category:</span> <span className="text-gray-900 font-medium capitalize">{draft.category || 'Infrastructure'}</span></div>
                             <div><span className="text-gray-500">Subcategory:</span> <span className="text-gray-900 font-medium capitalize">{draft.subcategory || 'General'}</span></div>
                             <div><span className="text-gray-500">Date Filed:</span> <span className="text-gray-900">{submissionDate}</span></div>
-                            <div><span className="text-gray-500">Method:</span> <span className="text-gray-900">SafePulse Digital Filing</span></div>
+                            <div><span className="text-gray-500">Method:</span> <span className="text-gray-900">NorthReport Digital Filing</span></div>
                         </div>
                     </div>
 
@@ -137,9 +137,9 @@ export default function Form311Document({ draft, editedDescription }: Form311Doc
                         </h3>
                         <div className="text-sm text-gray-900">
                             <div className="flex items-center gap-1">
-                                <span>📍</span> {draft.locationApprox?.label || '100 Main St W, Hamilton ON'}
+                                <span>📍</span> {draft.locationApprox?.label || '100 Main St W, Waterloo ON'}
                             </div>
-                            <div className="text-gray-500 text-xs mt-1">Ward 2 — Downtown Hamilton</div>
+                            <div className="text-gray-500 text-xs mt-1">Ward 2 — Downtown Waterloo</div>
                         </div>
                     </div>
 
@@ -195,7 +195,7 @@ export default function Form311Document({ draft, editedDescription }: Form311Doc
 
                 {/* Footer */}
                 <div className="bg-gray-800 text-gray-400 px-6 py-3 text-xs text-center">
-                    City of Hamilton | 905-546-CITY (2489) | hamilton.ca | 311 Service
+                    City of Waterloo | 905-546-CITY (2489) | hamilton.ca | 311 Service
                 </div>
 
             </div>

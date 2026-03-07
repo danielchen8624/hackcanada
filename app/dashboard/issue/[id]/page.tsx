@@ -350,7 +350,7 @@ export default function IssueDetailPage() {
                                     </div>
                                 </div>
                                 <p className="text-[10px] text-[var(--text-muted)] text-center border-t border-white/5 pt-3">
-                                    Detected by SafePulse
+                                    Detected by NorthReport
                                 </p>
                             </div>
                         </motion.div>

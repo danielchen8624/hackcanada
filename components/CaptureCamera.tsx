@@ -458,7 +458,7 @@ function CameraVoiceHUD({ voiceState, transcript }: { voiceState: 'idle' | 'list
             style={{ background: 'rgba(0,0,0,0.5)' }}
           >
             <Mic className="w-4 h-4 text-white/40" />
-            <span className="text-xs text-white/40 font-medium">Say &quot;Hey SafePulse&quot;</span>
+            <span className="text-xs text-white/40 font-medium">Say &quot;Hey NorthReport&quot;</span>
           </motion.div>
         )}
         {voiceState === 'listening' && (

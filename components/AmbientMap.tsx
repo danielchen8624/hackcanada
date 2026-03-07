@@ -10,7 +10,7 @@ interface AmbientMapProps {
 }
 
 export default function AmbientMap({
-    center = [-79.9192, 43.2557], // Hamilton default
+    center = [-79.9192, 43.2557], // Waterloo default
     className = ''
 }: AmbientMapProps) {
     const mapContainer = useRef<HTMLDivElement>(null);

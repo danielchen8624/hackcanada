@@ -44,7 +44,7 @@ export default function HeroGlobe({ scrollProgress }: HeroGlobeProps) {
             markerColor: [0.08, 0.72, 0.65], // Teal #14b8a6
             glowColor: [0.05, 0.05, 0.1],
             markers: [
-                // Hamilton, Ontario - highlighted
+                // Waterloo, Ontario - highlighted
                 { location: [43.26, -79.87], size: 0.08 },
                 // Other cities for context
                 { location: [43.65, -79.38], size: 0.04 }, // Toronto

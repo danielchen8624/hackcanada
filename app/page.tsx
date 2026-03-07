@@ -7,7 +7,7 @@ import { useUser } from "@auth0/nextjs-auth0/client";
 import Map, { type MapRef, Layer } from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { useRef } from "react";
-import SafePulseLogo from "@/components/landing/SafePulseLogo";
+import NorthReportLogo from "@/components/landing/NorthReportLogo";
 import PhoneFrame from "@/components/landing/PhoneFrame";
 import { VisionScreen, PulseFeedScreen, AgentTrackerScreen } from "@/components/landing/PhoneScreens";
 
@@ -113,7 +113,7 @@ export default function LandingPage() {
         }}
       >
         <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <SafePulseLogo size="md" />
+          <NorthReportLogo size="md" />
           {isLoading ? null : user ? (
             <Link
               href="/feed"
@@ -153,7 +153,7 @@ export default function LandingPage() {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <SafePulseLogo size="lg" showText={false} />
+            <NorthReportLogo size="lg" showText={false} />
           </motion.div>
 
           <motion.h1
@@ -242,7 +242,7 @@ export default function LandingPage() {
               <span className="text-amber-400">Five reports is a pattern.</span>
             </h2>
             <p className="text-gray-400">
-              SafePulse groups neighborhood data to find root causes, not just symptoms.
+              NorthReport groups neighborhood data to find root causes, not just symptoms.
             </p>
           </div>
           <PhoneFrame>
@@ -332,7 +332,7 @@ export default function LandingPage() {
 
           {/* Footer */}
           <p className="mt-16 text-gray-600 text-sm">
-            Built for <span className="text-gray-400">Hamilton</span>.
+            Built for <span className="text-gray-400">Waterloo</span>.
           </p>
         </div>
       </FixedSection>

@@ -130,7 +130,7 @@ function applyKeywordFallback(input: string): CommandResult | null {
       payload: { text: null },
       requiresConfirm: false,
       confirmPrompt: null,
-      spokenResponse: "Opening assisted 311 filing. You can select a category to file a report with the City of Hamilton."
+      spokenResponse: "Opening assisted 311 filing. You can select a category to file a report with the City of Waterloo."
     };
   }
   return null;

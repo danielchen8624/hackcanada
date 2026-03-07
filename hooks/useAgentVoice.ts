@@ -229,7 +229,7 @@ export function useAgentVoice({
         recognitionRef.current = recognition;
 
         recognition.onstart = () => {
-          console.log('[AGENT_VOICE] Now listening for "Hey SafePulse"...');
+          console.log('[AGENT_VOICE] Now listening for "Hey NorthReport"...');
         };
 
         recognition.onend = () => {
@@ -302,7 +302,7 @@ export function useAgentVoice({
           else if (modeRef.current === 'ACTIVE') {
             const exitCmd = stripWakeWords(fullTranscript).trim();
             if (
-              fullTranscript.includes('bye safepulse') || fullTranscript.includes('bye safe pulse') ||
+              fullTranscript.includes('bye northreport') || fullTranscript.includes('bye safe pulse') ||
               EXIT_WORDS.test(exitCmd)
             ) {
               endSession();

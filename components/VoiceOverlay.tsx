@@ -56,7 +56,7 @@ export default function VoiceOverlay({
                   </span>
                 </div>
                 <p className="text-xs text-[#666] text-center">
-                  Say &quot;Hey SafePulse&quot; to start again
+                  Say &quot;Hey NorthReport&quot; to start again
                 </p>
               </div>
             ) : (
@@ -116,7 +116,7 @@ export default function VoiceOverlay({
                 )}
 
                 <p className="text-xs text-[#888] text-center">
-                  Say &quot;Exit&quot; or &quot;Bye SafePulse&quot; to stop
+                  Say &quot;Exit&quot; or &quot;Bye NorthReport&quot; to stop
                 </p>
               </>
             )}

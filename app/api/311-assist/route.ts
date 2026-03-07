@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
         const reportSubcategory = reportData?.subcategory || '';
 
         // Generate professional 311 form content using Gemini
-        const prompt = `You are helping a citizen file a 311 service request with the City of Hamilton, Ontario.
+        const prompt = `You are helping a citizen file a 311 service request with the City of Waterloo, Ontario.
 
 CATEGORY: ${category.name}
 SUBCATEGORIES AVAILABLE: ${category.subcategories.join(', ')}
@@ -100,7 +100,7 @@ Return ONLY valid JSON in this exact format:
         // Generate spoken summary for voice mode
         const spokenSummary = `I've prepared a ${category.name} report for ${generatedForm.location}. ` +
             `The issue is: ${generatedForm.description.substring(0, 100)}. ` +
-            `To submit, go to Hamilton 311 online or call 905-546-2489. ` +
+            `To submit, go to Waterloo 311 online or call 905-546-2489. ` +
             `Would you like me to read the step-by-step instructions?`;
 
         const response: Form311Response = {

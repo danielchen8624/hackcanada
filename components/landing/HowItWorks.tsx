@@ -12,7 +12,7 @@ interface StepDef {
 const steps: StepDef[] = [
   {
     title: 'Speak',
-    description: 'Record what you see. SafePulse AI classifies it instantly.',
+    description: 'Record what you see. NorthReport AI classifies it instantly.',
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#14b8a6" strokeWidth="2" strokeLinecap="round">
         <rect x="14" y="6" width="12" height="20" rx="6" />

@@ -6,7 +6,7 @@ interface MapGridProps {
     scrollProgress: MotionValue<number>;
 }
 
-// Pulse signal positions (McMaster/Hamilton area)
+// Pulse signal positions (McMaster/Waterloo area)
 const PULSE_SIGNALS = [
     { x: 35, y: 42, delay: 0, size: 1 },
     { x: 52, y: 38, delay: 0.3, size: 0.8 },
@@ -177,7 +177,7 @@ export default function MapGrid({ scrollProgress }: MapGridProps) {
                         <span className="text-white"> citizens.</span>
                     </p>
                     <p className="text-gray-500 text-lg">
-                        Hamilton&apos;s pulse, visualized in real-time.
+                        Waterloo&apos;s pulse, visualized in real-time.
                     </p>
                 </motion.div>
             </div>

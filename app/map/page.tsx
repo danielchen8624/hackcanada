@@ -84,7 +84,7 @@ function MapPageInner() {
     <AppShell>
       <div className="flex flex-col h-screen">
         <TopBar
-          title="Live City Map"
+          title="City Heatmap"
           neighborhood={neighborhood}
           onNeighborhoodChange={setNeighborhood}
           showSearch={true}

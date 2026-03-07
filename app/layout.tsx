@@ -15,8 +15,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Live City Map — Real-time Urban Intelligence",
-  description: "Feed-first, AI-powered neighborhood safety platform for Hamilton",
+  title: "City Heatmap — Real-time Urban Intelligence",
+  description: "Feed-first, AI-powered neighborhood safety platform for Waterloo",
 };
 
 export default function RootLayout({

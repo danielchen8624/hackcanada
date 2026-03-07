@@ -3,7 +3,7 @@ import { callGeminiWithImage, PROMPTS } from '@/lib/gemini';
 import { requireAuth, handleApiError, ApiError } from '@/lib/auth';
 import { checkRateLimit, rateLimitError } from '@/lib/rateLimiter';
 
-export interface HamiltonAgentResponse {
+export interface WaterlooAgentResponse {
   hazard_detected: boolean;
   severity: 'critical' | 'high' | 'medium' | 'low';
   department: string;
@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
 
     // Build context for the AI prompt
     const contextBlock = [
-      `LOCATION: ${location || 'Hamilton, ON'}`,
+      `LOCATION: ${location || 'Waterloo, ON'}`,
       userContext ? `RESIDENT NOTES: ${userContext}` : null,
     ]
       .filter(Boolean)
@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
     console.log('[API] Calling Gemini with image size:', image.length, 'chars');
 
     // Call Gemini AI
-    const analysis = await callGeminiWithImage<HamiltonAgentResponse>(
+    const analysis = await callGeminiWithImage<WaterlooAgentResponse>(
       prompt,
       image,
     );

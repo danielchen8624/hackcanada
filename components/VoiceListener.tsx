@@ -22,11 +22,11 @@ const DISMISS_EXACT = /^(no|nope|no thanks|no thank you|i'm good|i'm done|that's
 // Exit keywords — matched anywhere so trailing noise ("exit uh") still works
 const EXIT_WORDS = /\b(exit|stop|quit|turn off|shut up|close)\b/i;
 
-// Wake word patterns - various ways "hey safepulse" might be heard (sorted by length for correct matching)
+// Wake word patterns - various ways "hey northreport" might be heard (sorted by length for correct matching)
 const WAKE_PATTERNS = [
-  'hey safepulse', 'hey safe pulse', 'hey safe post', 'hey safepost',
+  'hey northreport', 'hey safe pulse', 'hey safe post', 'hey safepost',
   'hey pulse', 'a pulse', 'hey poles', 'hey polls',
-  'hey safe polls', 'a safepulse', 'hey save pulse', 'hey staples',
+  'hey safe polls', 'a northreport', 'hey save pulse', 'hey staples',
   'hey stables', 'hey safe', 'hey saves', 'hey safety', 'hey staple',
   'hey say pulse', 'hey say post',
   "he's safe both", "he's safe", "he is safe", "safe both",
@@ -164,7 +164,7 @@ export default function VoiceListener({ enabled }: { enabled: boolean }) {
           break;
         case 'analyze_report':
           // Dispatch custom event for SmartReportAgent to pick up
-          window.dispatchEvent(new CustomEvent('safepulse:analyze'));
+          window.dispatchEvent(new CustomEvent('northreport:analyze'));
           break;
         default:
           if (cmd.spokenResponse) {
@@ -189,7 +189,7 @@ export default function VoiceListener({ enabled }: { enabled: boolean }) {
       // Dismiss / exit intent → end session
       if (DISMISS_EXACT.test(cleanedText.trim()) || EXIT_WORDS.test(cleanedText.trim())) {
         console.log('[VOICE] Dismiss/exit detected, ending session');
-        await speakWithBlock('Got it. Say Hey SafePulse whenever you need me.');
+        await speakWithBlock('Got it. Say Hey NorthReport whenever you need me.');
         endSession();
         return;
       }
@@ -337,7 +337,7 @@ export default function VoiceListener({ enabled }: { enabled: boolean }) {
 
           const commandAfterWake = stripWakeWords(fullTranscript);
 
-          // "Hey SafePulse exit/stop/quit" → end session immediately, skip ACTIVE
+          // "Hey NorthReport exit/stop/quit" → end session immediately, skip ACTIVE
           if (commandAfterWake && EXIT_WORDS.test(commandAfterWake)) {
             console.log('[VOICE] Exit in wake phrase — ending session');
             endSession();
@@ -388,7 +388,7 @@ export default function VoiceListener({ enabled }: { enabled: boolean }) {
         // Check for exit / bye / stop commands → fully stop listening
         const exitCmd = stripWakeWords(fullTranscript).trim();
         if (
-          fullTranscript.includes('bye safepulse') || fullTranscript.includes('bye safe pulse') ||
+          fullTranscript.includes('bye northreport') || fullTranscript.includes('bye safe pulse') ||
           EXIT_WORDS.test(exitCmd)
         ) {
           console.log('[VOICE] Exit/bye detected — ending session');

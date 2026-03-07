@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import FeedCard, { FeedItem } from './FeedCard';
-import AskSafePulse from './AskSafePulse';
+import AskNorthReport from './AskNorthReport';
 import DetailDrawer from './DetailDrawer';
 
 interface PulseFeedProps {
@@ -202,8 +202,8 @@ export default function PulseFeed({ neighborhood, isLeader, onItemSelect }: Puls
         )}
       </DetailDrawer>
 
-      {/* Ask SafePulse Modal */}
-      <AskSafePulse
+      {/* Ask NorthReport Modal */}
+      <AskNorthReport
         item={explainItem}
         isOpen={!!explainItem}
         onClose={() => setExplainItem(null)}

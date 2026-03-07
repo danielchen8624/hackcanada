@@ -45,7 +45,7 @@ export default function ContentComposer({ isOpen, onClose, onCreated }: ContentC
         latitude = pos.coords.latitude;
         longitude = pos.coords.longitude;
       } catch {
-        // Use Hamilton center as default
+        // Use Waterloo center as default
       }
 
       // Submit to the correct endpoint based on type
