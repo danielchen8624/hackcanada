@@ -1,20 +1,13 @@
 import { NextRequest } from 'next/server';
 import { getDb, generateId } from '@/lib/firebase';
-import { callGeminiWithImage, callGemini, PROMPTS } from '@/lib/gemini';
+import { callGeminiWithImage, PROMPTS } from '@/lib/gemini';
 import { encodeGeohash, getApproxLabel } from '@/lib/geohash';
 import { computeFeedScore } from '@/lib/feedScore';
-
-/**
- * Public endpoint for App Clip submissions.
- * No Auth0 session required — reports land in queue with status "clip-pending".
- * Protected by a shared API key in the x-clip-key header.
- */
 
 const CLIP_API_KEY = process.env.CLIP_API_KEY;
 
 export async function POST(req: NextRequest) {
   try {
-    // Validate clip API key
     const clipKey = req.headers.get('x-clip-key');
     if (!CLIP_API_KEY || clipKey !== CLIP_API_KEY) {
       return Response.json({ error: 'Unauthorized' }, { status: 401 });
@@ -34,32 +27,33 @@ export async function POST(req: NextRequest) {
     const label = getApproxLabel(cellId);
 
     // AI classification from image
-    let aiResult;
+    let aiResult: any;
     try {
       const input = JSON.stringify({
-        text: description || 'Photo submitted via App Clip',
+        text: description || 'Photo submitted via App Clip — analyze the image carefully',
         imageBase64: 'present',
       });
       aiResult = await callGeminiWithImage(
         `${PROMPTS.reportClassification}\n\nINPUT:\n${input}`,
         imageBase64,
       );
-    } catch {
+    } catch (aiError) {
+      console.error('Gemini analysis failed:', aiError);
       aiResult = {
         category: 'infrastructure',
         subcategory: 'general',
         severity: 'medium',
         aiSummary: description || 'App Clip photo report',
-        imageFindings: null,
+        imageFindings: 'AI analysis unavailable',
         immediateRisk: false,
         suggestedAction: 'Monitor and assess',
       };
     }
 
-    // Store image inline (same pattern as existing reports)
+    // Store image — increase limit to 5MB for clip reports
     let imageUrl: string | null = null;
     const sizeBytes = (imageBase64.length * 3) / 4;
-    if (sizeBytes <= 1_048_576) {
+    if (sizeBytes <= 5_242_880) {
       imageUrl = imageBase64;
     }
 
@@ -67,17 +61,17 @@ export async function POST(req: NextRequest) {
     const reportId = generateId('reports');
     const report = {
       userId: 'clip-anonymous',
-      neighborhood: 'downtown-hamilton',
+      neighborhood: 'downtown-waterloo',
       location: { type: 'Point', coordinates: [longitude, latitude] },
       locationApprox: { cellId, label },
-      category: (aiResult as any).category,
-      subcategory: (aiResult as any).subcategory,
-      severity: (aiResult as any).severity,
-      description: description || (aiResult as any).aiSummary || 'App Clip report',
-      aiSummary: (aiResult as any).aiSummary,
+      category: aiResult.category || 'infrastructure',
+      subcategory: aiResult.subcategory || 'general',
+      severity: aiResult.severity || 'medium',
+      description: description || aiResult.aiSummary || 'App Clip report',
+      aiSummary: aiResult.aiSummary || 'Photo report via App Clip',
       imageUrl,
-      imageAnalysis: (aiResult as any).imageFindings,
-      status: 'clip-pending',
+      imageAnalysis: aiResult.imageFindings || null,
+      status: 'draft',
       source: 'app-clip',
       upvotes: 0,
       feedScore: 0,
@@ -103,6 +97,7 @@ export async function POST(req: NextRequest) {
         category: report.category,
         severity: report.severity,
         aiSummary: report.aiSummary,
+        imageAnalysis: report.imageAnalysis,
         message: 'Report queued successfully',
       },
       { status: 201 },
