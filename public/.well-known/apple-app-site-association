@@ -1,14 +1,14 @@
 {
   "appclips": {
     "apps": [
-      "URFQY2FB25.com.northreport.clip"
+      "URFQY2FB25.com.northreport.app.Clip"
     ]
   },
   "applinks": {
     "apps": [],
     "details": [
       {
-        "appIDs": ["URFQY2FB25.com.northreport.clip"],
+        "appIDs": ["URFQY2FB25.com.northreport.app.Clip"],
         "components": [
           { "/": "/clip*" }
         ]
