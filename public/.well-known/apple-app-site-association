@@ -3,5 +3,16 @@
     "apps": [
       "URFQY2FB25.com.northreport.clip"
     ]
+  },
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["URFQY2FB25.com.northreport.clip"],
+        "components": [
+          { "/": "/clip*" }
+        ]
+      }
+    ]
   }
 }
