@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import FeedCard, { FeedItem } from './FeedCard';
-import AskNorthReport from './AskNorthReport';
+import AskNorthReport from './AskSafePulse';
 import DetailDrawer from './DetailDrawer';
 
 interface PulseFeedProps {
